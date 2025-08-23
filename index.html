@@ -8,23 +8,30 @@
     body {
       font-family: "Helvetica Neue", Arial, sans-serif;
       text-align: center;
-      background: #fafafa;
+      background: #FFE1E1; /* LOGO 背景色 */
       margin: 0;
       padding: 0;
       color: #333;
     }
     header {
-      background: #e84c61;
-      color: white;
       padding: 30px 20px;
     }
+    header img {
+      width: 220px; /* LOGO 大小 */
+      margin-bottom: 15px;
+    }
     h1 {
-      margin: 0;
       font-size: 28px;
+      margin: 10px 0;
+      color: #b03030;
     }
     .content {
       margin: 40px auto;
       max-width: 600px;
+      background: white;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
     .download-btn {
       display: inline-block;
@@ -34,11 +41,11 @@
       border-radius: 8px;
       text-decoration: none;
       color: white;
-      background: #4CAF50;
+      background: #e84c61;
       transition: background 0.3s;
     }
     .download-btn:hover {
-      background: #45a049;
+      background: #c43a4c;
     }
     .btn-disabled {
       background: #999 !important;
@@ -51,13 +58,14 @@
       margin-top: 50px;
       padding: 20px;
       font-size: 14px;
-      color: #888;
+      color: #666;
     }
   </style>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 </head>
 <body>
   <header>
+    <img src="ume-logo.png" alt="UME Logo"> <!-- 放你的 LOGO 文件 -->
     <h1>📲 下载 UME APP</h1>
   </header>
 
@@ -70,7 +78,7 @@
     </p>
 
     <!-- 安卓下载按钮（64位） -->
-    <a class="download-btn" href="https://www.pgyer.com/umefood-android" target="_blank">⬇️ 安卓 64位 (arm64-v8a) 推荐</a>
+    <a class="download-btn" href="https://你的64位APK下载链接" target="_blank">⬇️ 安卓 64位 (arm64-v8a) 推荐</a>
 
     <!-- 安卓下载按钮（32位） -->
     <a class="download-btn" href="https://你的32位APK下载链接" target="_blank">⬇️ 安卓 32位 (armeabi-v7a) 老机型</a>
@@ -83,7 +91,7 @@
 
     <!-- 二维码区域 -->
     <div class="qrcode" id="qrcode"></div>
-    <p>用手机扫码即可下载安卓 64位 推荐版本</p>
+    <p>📷 扫码即可下载安卓 64位 推荐版本</p>
   </div>
 
   <footer>
@@ -91,7 +99,7 @@
   </footer>
 
   <script>
-    // 生成二维码，默认指向64位APK
+    // 默认生成64位APK的二维码
     var qrcode = new QRCode(document.getElementById("qrcode"), {
       text: "https://你的64位APK下载链接",
       width: 150,
