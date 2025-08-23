@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UME APP 下载</title>
+  <style>
+    body {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      text-align: center;
+      background: #fafafa;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+    header {
+      background: #e84c61;
+      color: white;
+      padding: 30px 20px;
+    }
+    h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+    .content {
+      margin: 40px auto;
+      max-width: 600px;
+    }
+    .download-btn {
+      display: inline-block;
+      margin: 15px;
+      padding: 15px 30px;
+      font-size: 18px;
+      border-radius: 8px;
+      text-decoration: none;
+      color: white;
+      background: #4CAF50;
+      transition: background 0.3s;
+    }
+    .download-btn:hover {
+      background: #45a049;
+    }
+    .btn-disabled {
+      background: #999 !important;
+      cursor: not-allowed;
+    }
+    .qrcode {
+      margin: 30px auto;
+    }
+    footer {
+      margin-top: 50px;
+      padding: 20px;
+      font-size: 14px;
+      color: #888;
+    }
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1>📲 下载 UME APP</h1>
+  </header>
+
+  <div class="content">
+    <h2>来自丹麦 Ume Asian Supermarket 的问候！</h2>
+    <p>
+      我们不仅是超市，更是您的美食伙伴。<br>
+      线上订购，全丹配送。<br>
+      分享家的味道，传递最新优惠与食谱，物美期待您的光临！
+    </p>
+
+    <!-- 安卓下载按钮（64位） -->
+    <a class="download-btn" href="https://你的64位APK下载链接" target="_blank">⬇️ 安卓 64位 (arm64-v8a) 推荐</a>
+
+    <!-- 安卓下载按钮（32位） -->
+    <a class="download-btn" href="https://你的32位APK下载链接" target="_blank">⬇️ 安卓 32位 (armeabi-v7a) 老机型</a>
+
+    <!-- 苹果商店占位 -->
+    <a class="download-btn btn-disabled">🍎 iOS 敬请期待</a>
+
+    <!-- Google Play 占位 -->
+    <a class="download-btn btn-disabled">▶️ Google Play 敬请期待</a>
+
+    <!-- 二维码区域 -->
+    <div class="qrcode" id="qrcode"></div>
+    <p>用手机扫码即可下载安卓 64位 推荐版本</p>
+  </div>
+
+  <footer>
+    © 2025 UME Supermarket - All rights reserved.
+  </footer>
+
+  <script>
+    // 生成二维码，默认指向64位APK
+    var qrcode = new QRCode(document.getElementById("qrcode"), {
+      text: "https://你的64位APK下载链接",
+      width: 150,
+      height: 150
+    });
+  </script>
+</body>
+</html>
