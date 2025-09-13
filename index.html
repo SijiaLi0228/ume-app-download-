@@ -77,11 +77,8 @@
       分享家的味道，传递最新优惠与食谱，物美期待您的光临！
     </p>
 
-    <!-- 安卓下载按钮（64位） -->
-    <a class="download-btn" href="https://www.pgyer.com/18d61f71eae27ca29023ae0ae419bf1c" target="_blank">⬇️ 安卓 64位 (arm64-v8a) 推荐</a>
-
-    <!-- 安卓下载按钮（32位） -->
-    <a class="download-btn" href="https://www.pgyer.com/08c17208dd34f3bb5619d2375bbb247e" target="_blank">⬇️ 安卓 32位 (armeabi-v7a) 老机型</a>
+    <!-- 安卓下载按钮（统一入口） -->
+    <a class="download-btn" href="https://www.pgyer.com/18d61f71eae27ca29023ae0ae419bf1c" target="_blank">⬇️ 安卓手机下载</a>
 
     <!-- 苹果商店占位 -->
     <a class="download-btn btn-disabled">🍎 iOS 敬请期待</a>
@@ -91,7 +88,7 @@
 
     <!-- 二维码区域 -->
     <div class="qrcode" id="qrcode"></div>
-    <p>📷 扫码即可下载安卓 64位 推荐版本</p>
+    <p>📷 扫码即可下载安卓版本</p>
   </div>
 
   <footer>
@@ -99,9 +96,9 @@
   </footer>
 
   <script>
-    // 默认生成64位APK的二维码
+    // 生成二维码（安卓下载链接）
     var qrcode = new QRCode(document.getElementById("qrcode"), {
-      text: "https://你的64位APK下载链接",
+      text: "https://www.pgyer.com/18d61f71eae27ca29023ae0ae419bf1c",
       width: 150,
       height: 150
     });
