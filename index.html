@@ -53,6 +53,18 @@
     }
     .qrcode {
       margin: 30px auto;
+      max-width: 200px;
+    }
+    .qrcode img {
+      width: 100%;
+      height: auto;
+    }
+    .version-info {
+      margin: 20px 0;
+      padding: 15px;
+      background: #f8f9fa;
+      border-radius: 8px;
+      border-left: 4px solid #e84c61;
     }
     footer {
       margin-top: 50px;
@@ -61,14 +73,12 @@
       color: #666;
     }
   </style>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 </head>
 <body>
   <header>
     <img src="umelogo1.png" alt="UME Logo"> <!-- 放你的 LOGO 文件 -->
     <h1>📲 下载 UME APP</h1>
   </header>
-
   <div class="content">
     <h2>来自丹麦 Ume Asian Supermarket 的问候！</h2>
     <p>
@@ -76,21 +86,30 @@
       线上订购，全丹配送。<br>
       分享家的味道，传递最新优惠与食谱，物美期待您的光临！
     </p>
-
-    <!-- 安卓下载按钮（统一入口） -->
-    <a class="download-btn" href="https://www.pgyer.com/umefood-android" target="_blank">⬇️ 安卓手机下载</a>
-
+    
+    <div class="version-info">
+      <strong>最新版本：v1.0.1</strong><br>
+      <small>修复购物车和订单显示问题 | 大小：40.9MB</small>
+    </div>
+    
+    <!-- 安卓下载按钮（GitHub Release） -->
+    <a class="download-btn" href="https://github.com/SijiaLi0228/umefood_app/releases/download/v1.0.1/app-release.apk" target="_blank">⬇️ 安卓手机下载</a>
+    
     <!-- 苹果商店占位 -->
     <a class="download-btn btn-disabled">🍎 iOS 敬请期待</a>
-
+    
     <!-- Google Play 占位 -->
     <a class="download-btn btn-disabled">▶️ Google Play 敬请期待</a>
-
+    
+    <div class="qrcode">
+      <p><strong>扫码下载：</strong></p>
+      <!-- 你需要生成这个二维码图片 -->
+      <img src="qrcode.png" alt="下载二维码">
+      <p><small>手机扫码直接下载</small></p>
+    </div>
   </div>
-
   <footer>
     © 2025 UME Supermarket - All rights reserved.
   </footer>
-
 </body>
 </html>
