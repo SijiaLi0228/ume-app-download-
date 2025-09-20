@@ -92,8 +92,33 @@
       <small>修复购物车和订单显示问题 | 大小：40.9MB</small>
     </div>
     
-    <!-- 安卓下载按钮（GitHub Release） -->
-    <a class="download-btn" href="https://github.com/SijiaLi0228/umefood_app/releases/download/v1.0.1/app-release.apk" target="_blank">⬇️ 安卓手机下载</a>
+    <!-- 主要下载按钮 -->
+    <a class="download-btn" 
+       href="https://github.com/SijiaLi0228/umefood_app/releases/download/v1.0.1/app-release.apk" 
+       download="umefood-v1.0.1.apk"
+       target="_blank"
+       onclick="trackDownload()">⬇️ 安卓手机下载</a>
+    
+    <!-- 备用下载方式 -->
+    <details style="margin: 20px 0; text-align: left;">
+      <summary style="cursor: pointer; color: #e84c61; font-weight: bold;">下载遇到问题？点击查看解决方案</summary>
+      <div style="padding: 15px; background: #f8f9fa; margin-top: 10px; border-radius: 8px;">
+        <p><strong>方法1：复制链接</strong></p>
+        <input type="text" 
+               value="https://github.com/SijiaLi0228/umefood_app/releases/download/v1.0.1/app-release.apk" 
+               style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px; margin: 5px 0;"
+               onclick="this.select(); document.execCommand('copy');">
+        <p><small>点击上方链接自动复制，然后在浏览器中打开</small></p>
+        
+        <p><strong>方法2：直接访问</strong></p>
+        <a href="https://github.com/SijiaLi0228/umefood_app/releases/tag/v1.0.1" 
+           target="_blank" 
+           style="color: #e84c61;">访问 GitHub Release 页面</a>
+        
+        <p><strong>方法3：使用其他浏览器</strong></p>
+        <p><small>尝试使用 Chrome、Firefox 或系统默认浏览器下载</small></p>
+      </div>
+    </details>
     
     <!-- 苹果商店占位 -->
     <a class="download-btn btn-disabled">🍎 iOS 敬请期待</a>
@@ -103,13 +128,65 @@
     
     <div class="qrcode">
       <p><strong>扫码下载：</strong></p>
-      <!-- 你需要生成这个二维码图片 -->
-      <img src="qrcode.png" alt="下载二维码">
+      <!-- 使用在线二维码生成 -->
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://github.com/SijiaLi0228/umefood_app/releases/download/v1.0.1/app-release.apk" 
+           alt="下载二维码" 
+           style="border: 1px solid #ddd; padding: 10px; background: white;">
       <p><small>手机扫码直接下载</small></p>
+    </div>
+    
+    <!-- 移动设备提示 -->
+    <div id="mobile-tip" style="background: #e3f2fd; padding: 15px; margin: 20px 0; border-radius: 8px; display: none;">
+      <strong>移动设备用户提示：</strong><br>
+      如果下载失败，请尝试：<br>
+      1. 长按下载按钮选择"在新标签页中打开"<br>
+      2. 或复制链接到外部浏览器（如Chrome）打开<br>
+      3. 确保允许下载未知来源应用
     </div>
   </div>
   <footer>
     © 2025 UME Supermarket - All rights reserved.
   </footer>
+
+  <script>
+    // 检测移动设备并显示提示
+    function isMobile() {
+      return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    }
+
+    if (isMobile()) {
+      document.getElementById('mobile-tip').style.display = 'block';
+    }
+
+    // 跟踪下载点击
+    function trackDownload() {
+      console.log('Download button clicked');
+      
+      // 如果是移动设备，延迟提示
+      if (isMobile()) {
+        setTimeout(function() {
+          alert('如果下载没有开始，请长按下载按钮选择"在新标签页中打开"');
+        }, 2000);
+      }
+    }
+
+    // 自动复制链接到剪贴板的功能
+    function copyToClipboard(text) {
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(text).then(function() {
+          alert('链接已复制到剪贴板！');
+        });
+      } else {
+        // 备用方法
+        var textArea = document.createElement("textarea");
+        textArea.value = text;
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+        alert('链接已复制到剪贴板！');
+      }
+    }
+  </script>
 </body>
 </html>
