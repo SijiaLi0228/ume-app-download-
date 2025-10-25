@@ -142,20 +142,24 @@
     <h2>来自丹麦 Ume Asian Supermarket 的问候！</h2>
     <p>我们不仅是超市，更是您的美食伙伴。<br>线上订购，全丹配送。<br>分享家的味道，传递最新优惠与食谱，物美期待您的光临！</p>
 
+    <!-- 可手动更新版本号和大小 -->
     <div class="version-box">
       <strong>最新版本：</strong>v1.0.1<br>
       <small>修复购物车与订单显示问题 ｜ 大小：40.9MB</small>
     </div>
 
     <div class="download-group">
-      <a class="download-btn" href="https://i.diawi.com/FSQNai" target="_blank" onclick="trackDownload()">
+      <!-- 安卓下载按钮：指向 GitHub Releases 最新版本 -->
+      <a class="download-btn" href="https://github.com/SijiaLi0228/umefood_app/releases/latest/download/app-release.apk" target="_blank">
         ⬇️ 安卓手机下载
       </a><br>
+      <!-- App Store 按钮（保持不变） -->
       <a class="app-store" href="https://apps.apple.com/ae/app/umefood/id6752511298" target="_blank" rel="noopener">
         <img src="black.svg" alt="Download on the App Store" style="height:60px;">
       </a>
     </div>
 
+    <!-- 可选二维码区块 -->
     <div class="qrcode">
       <img src="qrcode.png" alt="下载二维码">
       <p style="font-size:13px; color:#666;">扫码下载 UME APP</p>
@@ -165,9 +169,9 @@
       <summary>📍 下载遇到问题？点击查看解决方案</summary>
       <div style="background:#f9f9f9; padding:15px; border-radius:10px; margin-top:8px;">
         <p><strong>方法1：</strong> 使用备用下载地址<br>
-        <a href="https://github.com/SijiaLi0228/umefood_app/releases/download/v1.0.1/app-release.apk" target="_blank" style="color:#e84c61;">GitHub Release 下载</a></p>
+        <a href="https://github.com/SijiaLi0228/umefood_app/releases/download/v1.0.1/app-release.apk" target="_blank" style="color:#e84c61;">GitHub Release 下载（v1.0.1）</a></p>
         <p><strong>方法2：</strong> 复制链接在浏览器打开<br>
-        <small>https://i.diawi.com/FSQNai</small></p>
+        <small>https://github.com/SijiaLi0228/umefood_app/releases/latest/download/app-release.apk</small></p>
       </div>
     </details>
   </div>
@@ -175,16 +179,5 @@
   <footer>
     © 2025 UME Supermarket - All rights reserved.
   </footer>
-
-  <script>
-    function isMobile() {
-      return /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-    }
-    function trackDownload() {
-      if (isMobile()) {
-        setTimeout(() => alert("如果下载没有开始，请长按下载按钮选择“在新标签页中打开”"), 2000);
-      }
-    }
-  </script>
 </body>
 </html>
