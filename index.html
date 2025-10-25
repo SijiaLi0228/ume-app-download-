@@ -13,16 +13,11 @@
     text-align: center;
   }
 
-  /* 顶部logo区域，没有背景色，与页面粉色渐变融合 */
-  .logo-bar {
-    padding: 50px 20px 20px;
+  /* 顶部标题区（可保留或根据需求调整） */
+  .title-bar {
+    padding: 40px 20px 20px;
   }
-  .logo-bar img {
-    width: 180px;
-    margin-bottom: 10px;
-    filter: drop-shadow(0 4px 10px rgba(0,0,0,0.1));
-  }
-  .logo-bar h1 {
+  .title-bar h1 {
     color: #b03030;
     font-size: 32px;
     margin: 0;
@@ -44,6 +39,13 @@
   @keyframes fadeIn {
     from {opacity: 0; transform: translateY(15px);}
     to   {opacity: 1; transform: translateY(0);}
+  }
+
+  /* 卡片内的logo尺寸和间距 */
+  .card .logo {
+    width: 140px;        /* 缩小 logo */
+    margin: 0 auto 20px; /* 居中并与文本留白 */
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
   }
 
   h2 {
@@ -116,16 +118,15 @@
 </head>
 <body>
 
-  <!-- 顶部 Logo 和标题区，与背景渐变融为一体 -->
-  <div class="logo-bar">
-  <!-- 使用透明背景的 logo -->
-  <img src="umelogo.png" alt="UME Logo">
-  <h1>📱 下载 UME APP</h1>
-</div>
+  <!-- 顶部标题 -->
+  <div class="title-bar">
+    <h1>📱 下载 UME APP</h1>
+  </div>
 
-
-  <!-- 主内容卡片 -->
+  <!-- 主内容卡片，包含缩小后的 logo -->
   <div class="card">
+    <img src="umelogo.png" alt="UME Logo" class="logo">
+
     <h2>来自丹麦 Ume Asian Supermarket 的问候！</h2>
     <p>我们不仅是超市，更是您的美食伙伴。<br>线上订购，全丹配送。<br>分享家的味道，传递最新优惠与食谱，物美期待您的光临！</p>
 
