@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>UME APP 下载</title>
 <style>
   body {
@@ -13,12 +13,29 @@
     text-align: center;
   }
 
+  /* 顶部logo区域，没有背景色，与页面粉色渐变融合 */
+  .logo-bar {
+    padding: 50px 20px 20px;
+  }
+  .logo-bar img {
+    width: 180px;
+    margin-bottom: 10px;
+    filter: drop-shadow(0 4px 10px rgba(0,0,0,0.1));
+  }
+  .logo-bar h1 {
+    color: #b03030;
+    font-size: 32px;
+    margin: 0;
+    letter-spacing: 1px;
+  }
+
+  /* 内容卡片 */
   .card {
     max-width: 650px;
-    margin: 50px auto 60px;
+    margin: 0 auto 60px;
     padding: 45px 35px;
     border-radius: 24px;
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.85);
     backdrop-filter: blur(12px);
     box-shadow: 0 8px 32px rgba(0,0,0,0.08);
     animation: fadeIn 0.6s ease;
@@ -26,27 +43,7 @@
 
   @keyframes fadeIn {
     from {opacity: 0; transform: translateY(15px);}
-    to {opacity: 1; transform: translateY(0);}
-  }
-
-  .logo-title {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-
-  .logo-title img {
-    width: 180px;
-    margin-bottom: 10px;
-    filter: drop-shadow(0 4px 10px rgba(0,0,0,0.1));
-  }
-
-  .logo-title h1 {
-    color: #b03030;
-    font-size: 32px;
-    margin: 0;
-    letter-spacing: 1px;
+    to   {opacity: 1; transform: translateY(0);}
   }
 
   h2 {
@@ -70,14 +67,9 @@
     text-align: left;
     margin: 25px 0;
   }
+  .version-box strong { color: #b03030; }
 
-  .version-box strong {
-    color: #b03030;
-  }
-
-  .download-group {
-    margin-top: 25px;
-  }
+  .download-group { margin-top: 25px; }
 
   .download-btn {
     display: inline-flex;
@@ -94,7 +86,6 @@
     box-shadow: 0 4px 12px rgba(232,76,97,0.35);
     transition: all 0.3s;
   }
-
   .download-btn:hover {
     transform: translateY(-3px);
     box-shadow: 0 6px 18px rgba(176,48,48,0.35);
@@ -109,7 +100,6 @@
     margin-top: 25px;
     text-align: left;
   }
-
   summary {
     cursor: pointer;
     color: #b03030;
@@ -125,19 +115,21 @@
 </style>
 </head>
 <body>
-  <div class="card">
-    <!-- 将 Logo 和标题放在同一容器中 -->
-    <div class="logo-title">
-      <img src="umelogo1.png" alt="UME Logo">
-      <h1>📱 下载 UME APP</h1>
-    </div>
 
+  <!-- 顶部 Logo 和标题区，与背景渐变融为一体 -->
+  <div class="logo-bar">
+    <img src="umelogo1.png" alt="UME Logo">
+    <h1>📱 下载 UME APP</h1>
+  </div>
+
+  <!-- 主内容卡片 -->
+  <div class="card">
     <h2>来自丹麦 Ume Asian Supermarket 的问候！</h2>
     <p>我们不仅是超市，更是您的美食伙伴。<br>线上订购，全丹配送。<br>分享家的味道，传递最新优惠与食谱，物美期待您的光临！</p>
 
     <div class="version-box">
       <strong>最新版本：</strong>v1.0.1<br>
-      <small>修复购物车与订单显示问题 ｜ 大小：40.9MB</small>
+      <small>修复购物车与订单显示问题 ｜ 大小：40.9 MB</small>
     </div>
 
     <div class="download-group">
@@ -161,7 +153,7 @@
   </div>
 
   <footer>
-    © 2025 UME Supermarket - All rights reserved.
+    © 2025 UME Supermarket - All rights reserved.
   </footer>
 </body>
 </html>
