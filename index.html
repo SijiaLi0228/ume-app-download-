@@ -1,163 +1,175 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>UME APP 下载</title>
-  <style>
-    body {
-      font-family: "Helvetica Neue", Arial, sans-serif;
-      background: linear-gradient(180deg, #fff5f6, #ffe6e8);
-      margin: 0;
-      color: #333;
-      text-align: center;
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>UME APP 下载</title>
+<style>
+  body {
+    font-family: "Helvetica Neue", "PingFang SC", Arial, sans-serif;
+    background: linear-gradient(180deg, #fff5f6 0%, #ffe6e8 100%);
+    margin: 0;
+    color: #333;
+    text-align: center;
+  }
 
-    header {
-      padding: 40px 20px 20px;
-    }
+  header {
+    padding: 50px 20px 30px;
+  }
 
-    header img {
-      width: 180px;
-      margin-bottom: 15px;
-      filter: drop-shadow(0 3px 6px rgba(0,0,0,0.15));
-    }
+  header img {
+    width: 180px;
+    margin-bottom: 10px;
+    filter: drop-shadow(0 4px 10px rgba(0,0,0,0.1));
+  }
 
-    h1 {
-      font-size: 30px;
-      color: #b03030;
-      margin-bottom: 10px;
-    }
+  h1 {
+    color: #b03030;
+    font-size: 32px;
+    margin: 0;
+    letter-spacing: 1px;
+  }
 
-    .content {
-      background: #fff;
-      max-width: 600px;
-      margin: 20px auto 60px;
-      padding: 40px 30px;
-      border-radius: 20px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-      text-align: center;
-    }
+  .card {
+    max-width: 650px;
+    margin: 30px auto 60px;
+    padding: 45px 35px;
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+    animation: fadeIn 0.6s ease;
+  }
 
-    .content h2 {
-      color: #b03030;
-      margin-bottom: 10px;
-    }
+  @keyframes fadeIn {
+    from {opacity: 0; transform: translateY(15px);}
+    to {opacity: 1; transform: translateY(0);}
+  }
 
-    .content p {
-      line-height: 1.8;
-      font-size: 16px;
-      color: #555;
-    }
+  h2 {
+    color: #a12828;
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
 
-    .download-btn {
-      display: inline-block;
-      margin: 25px 10px 15px;
-      padding: 16px 36px;
-      font-size: 18px;
-      border-radius: 12px;
-      text-decoration: none;
-      color: #fff;
-      background: linear-gradient(135deg, #ff5f6d, #e84c61);
-      box-shadow: 0 4px 12px rgba(232, 76, 97, 0.4);
-      transition: all 0.3s ease;
-    }
+  p {
+    color: #555;
+    line-height: 1.8;
+    font-size: 16px;
+    margin: 0 0 15px;
+  }
 
-    .download-btn:hover {
-      transform: translateY(-3px);
-      background: linear-gradient(135deg, #e84c61, #b03030);
-      box-shadow: 0 6px 16px rgba(176, 48, 48, 0.4);
-    }
+  .version-box {
+    background: #fff9f9;
+    border-left: 5px solid #e84c61;
+    border-radius: 10px;
+    padding: 15px 18px;
+    text-align: left;
+    margin: 25px 0;
+  }
 
-    .version-info {
-      background: #fff8f9;
-      padding: 15px;
-      margin-top: 20px;
-      border-left: 5px solid #e84c61;
-      border-radius: 8px;
-      font-size: 15px;
-      text-align: left;
-    }
+  .version-box strong {
+    color: #b03030;
+  }
 
-    details {
-      margin-top: 25px;
-      text-align: left;
-    }
+  .download-group {
+    margin-top: 25px;
+  }
 
-    summary {
-      cursor: pointer;
-      color: #e84c61;
-      font-weight: bold;
-      font-size: 16px;
-    }
+  .download-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 14px 30px;
+    background: linear-gradient(135deg, #ff6677, #e84c61);
+    color: #fff;
+    font-size: 17px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 500;
+    box-shadow: 0 4px 12px rgba(232,76,97,0.35);
+    transition: all 0.3s;
+  }
 
-    footer {
-      padding: 30px 10px;
-      font-size: 14px;
-      color: #777;
-    }
+  .download-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(176,48,48,0.35);
+  }
 
-    .app-store {
-      margin-top: 25px;
-      display: inline-block;
-    }
+  .app-store {
+    margin-top: 15px;
+    display: inline-block;
+  }
 
-    #mobile-tip {
-      background: #e3f2fd;
-      padding: 15px;
-      margin: 25px 0 0;
-      border-radius: 8px;
-      display: none;
-      font-size: 14px;
-      line-height: 1.6;
-    }
-  </style>
+  details {
+    margin-top: 25px;
+    text-align: left;
+  }
+
+  summary {
+    cursor: pointer;
+    color: #b03030;
+    font-weight: 600;
+    font-size: 16px;
+  }
+
+  .qrcode {
+    margin-top: 25px;
+  }
+
+  .qrcode img {
+    width: 140px;
+    height: 140px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+  }
+
+  footer {
+    color: #888;
+    font-size: 14px;
+    margin: 40px 0 20px;
+  }
+</style>
 </head>
 <body>
   <header>
     <img src="umelogo1.png" alt="UME Logo" />
-    <h1>📲 下载 UME APP</h1>
+    <h1>📱 下载 UME APP</h1>
   </header>
 
-  <div class="content">
+  <div class="card">
     <h2>来自丹麦 Ume Asian Supermarket 的问候！</h2>
-    <p>
-      我们不仅是超市，更是您的美食伙伴。<br />
-      线上订购，全丹配送。<br />
-      分享家的味道，传递最新优惠与食谱，物美期待您的光临！
-    </p>
+    <p>我们不仅是超市，更是您的美食伙伴。<br>线上订购，全丹配送。<br>分享家的味道，传递最新优惠与食谱，物美期待您的光临！</p>
 
-    <div class="version-info">
-      <strong>最新版本：v1.0.1</strong><br />
+    <div class="version-box">
+      <strong>最新版本：</strong>v1.0.1<br>
       <small>修复购物车与订单显示问题 ｜ 大小：40.9MB</small>
     </div>
 
-    <a class="download-btn" href="https://i.diawi.com/FSQNai" target="_blank" onclick="trackDownload()">⬇️ 安卓手机下载</a>
+    <div class="download-group">
+      <a class="download-btn" href="https://i.diawi.com/FSQNai" target="_blank" onclick="trackDownload()">
+        ⬇️ 安卓手机下载
+      </a><br>
+      <a class="app-store" href="https://apps.apple.com/ae/app/umefood/id6752511298" target="_blank" rel="noopener">
+        <img src="black.svg" alt="Download on the App Store" style="height:60px;">
+      </a>
+    </div>
 
-    <a class="app-store" href="https://apps.apple.com/ae/app/umefood/id6752511298?itscg=30200&amp;itsct=apps_box_link&amp;mttnsubad=6752511298" target="_blank" rel="noopener">
-      <img src="black.svg" alt="Download on the App Store" style="height:60px;">
-    </a>
+    <div class="qrcode">
+      <img src="qrcode.png" alt="下载二维码">
+      <p style="font-size:13px; color:#666;">扫码下载 UME APP</p>
+    </div>
 
     <details>
-      <summary>下载遇到问题？点击查看解决方案</summary>
-      <div style="background:#f8f9fa; padding:15px; margin-top:10px; border-radius:8px;">
-        <p><strong>方法1：备用下载地址</strong></p>
-        <a href="https://github.com/SijiaLi0228/umefood_app/releases/download/v1.0.1/app-release.apk" target="_blank" style="color:#e84c61;">GitHub Release 下载</a>
-
-        <p><strong>方法2：复制链接</strong></p>
-        <input type="text" value="https://i.diawi.com/FSQNai" style="width:100%; padding:8px; border:1px solid #ddd; border-radius:4px; margin:5px 0;" onclick="this.select(); copyToClipboard(this.value);" />
-        <p><small>点击上方链接自动复制，然后在浏览器中打开</small></p>
-
-        <p><strong>方法3：使用其他浏览器</strong></p>
-        <p><small>尝试使用 Chrome、Firefox 或系统默认浏览器下载</small></p>
+      <summary>📍 下载遇到问题？点击查看解决方案</summary>
+      <div style="background:#f9f9f9; padding:15px; border-radius:10px; margin-top:8px;">
+        <p><strong>方法1：</strong> 使用备用下载地址<br>
+        <a href="https://github.com/SijiaLi0228/umefood_app/releases/download/v1.0.1/app-release.apk" target="_blank" style="color:#e84c61;">GitHub Release 下载</a></p>
+        <p><strong>方法2：</strong> 复制链接在浏览器打开<br>
+        <small>https://i.diawi.com/FSQNai</small></p>
       </div>
     </details>
-
-    <div id="mobile-tip">
-      <strong>移动设备用户提示：</strong><br />
-      Diawi 专为移动设备优化，下载体验更佳！<br />
-      如仍有问题，请尝试备用下载方式。
-    </div>
   </div>
 
   <footer>
@@ -166,33 +178,11 @@
 
   <script>
     function isMobile() {
-      return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+      return /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
     }
-
-    if (isMobile()) {
-      document.getElementById("mobile-tip").style.display = "block";
-    }
-
     function trackDownload() {
-      console.log("Download button clicked");
       if (isMobile()) {
-        setTimeout(function() {
-          alert('如果下载没有开始，请长按下载按钮选择“在新标签页中打开”');
-        }, 2000);
-      }
-    }
-
-    function copyToClipboard(text) {
-      if (navigator.clipboard) {
-        navigator.clipboard.writeText(text).then(() => alert("链接已复制到剪贴板！"));
-      } else {
-        const textarea = document.createElement("textarea");
-        textarea.value = text;
-        document.body.appendChild(textarea);
-        textarea.select();
-        document.execCommand("copy");
-        document.body.removeChild(textarea);
-        alert("链接已复制到剪贴板！");
+        setTimeout(() => alert("如果下载没有开始，请长按下载按钮选择“在新标签页中打开”"), 2000);
       }
     }
   </script>
